@@ -7,6 +7,18 @@ const QuoteStyled = styled.div`
   margin: 1.5em 0;
   padding: 10px;
   width: 100%;
+  .quote {
+    position: relative;
+  }
+
+  .quote::before {
+    content: open-quote;
+    /* position: absolute; */
+    color: #ddd;
+    font-size: 100px;
+    /* left: -10px; */
+    /* right: -10px; */
+  }
 
   .author {
     margin: 0;
@@ -17,7 +29,7 @@ const QuoteStyled = styled.div`
 const Quote = ({ quote }) => {
   return (
     <QuoteStyled>
-      <p>{quote.quote}</p>
+      <p className="quote">{quote.quote}</p>
       <p className="author">Author: {quote.author}</p>
     </QuoteStyled>
   );
